@@ -1,26 +1,23 @@
-def the_longest_high(nr_of_p, my_list):
-    longer_way=0
-    longer_way2=0
-    for i in range(1, nr_of_p-1) :
-        if my_list[i][0] >=my_list[i-1][0]:
-            longer_way += my_list[i][1]
-        else:
-            if longer_way > longer_way2:
-                longer_way2=longer_way
-                longer_way=0
-    if longer_way > longer_way2:
-        longer_way2=longer_way
-    print( longer_way2)
-
-
-my_list=[]
-nr_of_p = int(input('borne succesive ='))
-for i in range(0, nr_of_p):
-    my_list.append([])
+def cel_mai_lung(nr_p, list):
+    l_way=0
+    l_way2=0
+    for i in range(1, nr_p-1) :
+        if list[i][0] >=list[i-1][0]:
+            l_way += list[i][1]
+        elif l_way > l_way2:
+                l_way2=l_way
+                l_way=0
+    if l_way > l_way2:
+        l_way2=l_way
+    print(l_way2)
+list=[]
+nr_p = int(input('borne succesive ='))
+for i in range(0, nr_p):
+    list.append([])
     print('borna ', i+1)
     print('high =',end='')
-    my_list[i].append(int(input()))
-    print('disase =', end='')
-    my_list[i].append(int(input()))
+    list[i].append(int(input()))
+    print('distance =', end='')
+    list[i].append(int(input()))
 if __name__ == '__main__':
-    the_longest_high(nr_of_p,my_list)
+    cel_mai_lung(nr_p,list)
