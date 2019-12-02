@@ -19,7 +19,7 @@ def par_impar(x):
         return False
 
 def corectitudine_cod(x):
-    if num_cif(x)>=9 or par_impar(x)==False:
+    if num_cif(x)>9 or par_impar(x)==False:
         return 'Cod incorect'
     suma=0
     produsul=1
@@ -34,9 +34,9 @@ def corectitudine_cod(x):
     else:
         suma+=x
     if  produsul%x==suma%x:
-        print('Cod corect')
+        return 'Cod corect'
     else:
-        print('Cod incorect')
+        return 'Cod incorect'
 
 cod=eval(input('cod='))
 print(corectitudine_cod(cod))

@@ -1,7 +1,7 @@
 def suma_inv(n):
-    s=1
-    for i in range(2,n+1):
-        s+=1/i
-    print(s)
+    if n==1:
+        return 1
+    else:
+        return 1/n+suma_inv(n-1)
 n=int(input('n='))
 print(suma_inv(n))

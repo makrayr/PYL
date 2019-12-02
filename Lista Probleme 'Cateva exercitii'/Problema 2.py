@@ -1,10 +1,12 @@
+from math import sqrt
 def cerc_patrat(R,n):
-    lat=0
+    latura=0
+    x=sqrt(2)
     while n!=0:
         print(R)
-        lat=R*2/(sqrt(2))
-        print(lat)
-        R=lat/2
+        latura=(R*2)/x
+        print(latura)
+        R=latura/2
         n-=1
 
 n=int(input('n='))
