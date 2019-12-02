@@ -7,12 +7,12 @@ while True:
     else:
      break
 r=prog[1]-prog[0]
-k=0
+k=1
 x=len(prog)-1
-for i in range(x, 0 , -1):
+for i in range(x, 1, -1):
     if prog[i]-prog[i-1]==r:
         k+=1
-if k==(len(prog)-1):
+if k==x:
     print('Termenii dati reprezinta o progresie aritmetica')
 else:
     print('Termenii dati nu reprezinta o progresie aritmetica')
