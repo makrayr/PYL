@@ -6,6 +6,6 @@ def distanta_max(x ,n, t):
         t-=n
     return s
 x = float(input('viteza='))
-n = float(input('nr de minute='))
+n = float(input('Nr de minute dupa care magarusul oboseste='))
 t=int(input('timp total='))
-print(distanta_max(x ,n))
+print(format(distanta_max(x ,n, t),'.2f'))

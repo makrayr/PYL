@@ -13,6 +13,6 @@ for i in range(x, 1, -1):
     if prog[i]-prog[i-1]==r:
         k+=1
 if k==x:
-    print('Termenii dati reprezinta o progresie aritmetica')
+    print('Termenii dati reprezinta o progresie aritmetica cu ratia',r)
 else:
     print('Termenii dati nu reprezinta o progresie aritmetica')
