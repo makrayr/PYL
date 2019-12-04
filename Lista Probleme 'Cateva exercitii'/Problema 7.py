@@ -1,43 +1,28 @@
-def determine_type_of_triangle(laturilor_triunghi, area):
-    if laturilor_triunghi[0] == laturilor_triunghi[1] and laturilor_triunghi[0] ==laturilor_triunghi[2]:
-        print('echilateral')
-
-    elif ((laturilor_triunghi[0] * laturilor_triunghi[1]) / 2 == area or
-        (laturilor_triunghi[0] * laturilor_triunghi[2]) / 2 == area or
-        (laturilor_triunghi[2] * laturilor_triunghi[1]) / 2 == area)and\
-        (laturilor_triunghi[0]==laturilor_triunghi[1]
-         or laturilor_triunghi[0] ==laturilor_triunghi[2] or
-         laturilor_triunghi[1] == laturilor_triunghi[2]) :
-        print('triunghiului  dreptunghic isoscel')
-    elif (laturilor_triunghi[0] == laturilor_triunghi[1]
-          or laturilor_triunghi[0] == laturilor_triunghi[2] or
-          laturilor_triunghi[1] == laturilor_triunghi[2]):
-        print('isoscel')
-
-    elif (laturilor_triunghi[0]*laturilor_triunghi[1])/2 == area or\
-        (laturilor_triunghi[0]*laturilor_triunghi[2])/2 == area or\
-        (laturilor_triunghi[2]*laturilor_triunghi[1])/2 == area:
-        print("triunghiului  dreptunghic")
+def tip_triunghi(a,b,c,A):
+    if a==b and a==c:
+        print('Echilatral')
+    elif ((a*b)/2==A or (a*c)/2==A or (c*b)/2==A) and (a==b or a==c or b==c):
+        print('Triunghi dreptunghic isoscel')
+    elif (a==b or a==c or b==c):
+        print('Isoscel')
+    elif (a*b)/2==A or (a*c)/2==A or (b*c)/2==A:
+        print('Triunghi dreptunghic')
     else:
-        print('oarecare ')
+        print('Oarecare')
 
+def arie_inaltimi(a,b,c):
+    sp=(a+b+c)/2
+    A=(sp*(sp-a)*(sp-b)*(sp-c))**0.5
+    print('Aria=',A)
+    print('Inaltimea perp. pe latura AB este:',(2*A)/c)
+    print('Inaltimea perp. pe latura BC este:',(2*A)/a)
+    print('Inaltimea perp. pe latura AC este:',(2*A)/b)
+    if __name__=='__main__':
+        tip_triunghi(a,b,c,A)
 
-def my_function(laturilor_triunghi):
-    s = (laturilor_triunghi[0] + laturilor_triunghi[1] + laturilor_triunghi[2]) / 2
-    area = (s * (s - laturilor_triunghi[0]) * (s - laturilor_triunghi[1]) * (s - laturilor_triunghi[2])) ** 0.5
-    print('area =', area)
-    inaltimilor_triunghiului=[]
-    for i in range(0, 3):
-        inaltimilor_triunghiului.append((2 * area) / laturilor_triunghi[i])
-        print(inaltimilor_triunghiului[i], end=' ')
-    print('\n')
-    if __name__ == '__main__':
-        determine_type_of_triangle(laturilor_triunghi, area)
+c=float(input('Latura AB='))
+a=float(input('Latura BC='))
+b=float(input('Latura AC='))
 
-
-laturilor_triunghi=[]
-for i in range(0,3):
-    print('laturilor triunghi', i+1, '=',end=' ')
-    laturilor_triunghi.append(float(input()))
-if __name__ == '__main__':
-    my_function(laturilor_triunghi)
+if __name__=='__main__':
+    arie_inaltimi(a,b,c)
