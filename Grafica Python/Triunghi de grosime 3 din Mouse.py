@@ -1,0 +1,13 @@
+from graphics import *
+win=GraphWin('Triunghi din mouse',500,500)
+win.setCoords(0,0,500,500)
+mesaj=Text(Point(100,450),'Dati click pe 3 puncte')
+mesaj.draw(win)
+P1=win.getMouse()
+P2=win.getMouse()
+P3=win.getMouse()
+triunghi=Polygon(P1,P2,P3)
+triunghi.setOutline('red')
+triunghi.setWidth(3)
+triunghi.draw(win)
+win.getMouse()
