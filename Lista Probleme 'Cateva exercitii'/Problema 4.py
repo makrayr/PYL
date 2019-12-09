@@ -8,8 +8,7 @@ while True:
      break
 r=prog[1]-prog[0]
 k=1
-x=len(prog)-1
-for i in range(x, 1, -1):
+for i in range(len(prog)-1, 1, -1):
     if prog[i]-prog[i-1]==r:
         k+=1
 if k==x:
