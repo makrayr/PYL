@@ -22,13 +22,13 @@ while not ord:
             ord=False
 
 for i in range(0, n):
-    if greutate[i]>gr_rucsac:
-        castig_obtinut=castig_obtinut+((greutate[i]-(greutate[i]-gr_rucsac))*castig[i]/greutate[i])
+    if gr_rucsac == 0:
+        break
+    if greutate[i]>=gr_rucsac:
+        castig_obtinut=castig_obtinut+((gr_rucsac*castig[i])/greutate[i])
         gr_rucsac=0
     else:
         castig_obtinut=castig_obtinut+castig[i]
         gr_rucsac-=greutate[i]
-    if gr_rucsac==0:
-        break
 
 print('Castigul maxim ce poate fi obtinut este:',castig_obtinut)

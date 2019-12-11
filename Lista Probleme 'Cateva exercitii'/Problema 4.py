@@ -7,11 +7,12 @@ while True:
     else:
      break
 r=prog[1]-prog[0]
-k=1
+este_prog=True
 for i in range(len(prog)-1, 1, -1):
-    if prog[i]-prog[i-1]==r:
-        k+=1
-if k==x:
-    print('Termenii dati reprezinta o progresie aritmetica cu ratia',r)
-else:
-    print('Termenii dati nu reprezinta o progresie aritmetica')
+    if prog[i]-prog[i-1]!=r:
+        este_prog=False
+        print('Sirul nu este o progresie aritmetica')
+        break
+
+if este_prog==True:
+    print('Sirul este o progresie aritmetica')
